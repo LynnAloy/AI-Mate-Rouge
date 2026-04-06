@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da051ef7b692144a8c9d510250f02a8, type: 3}
+  m_Name: TestDifficulty
+  m_EditorClassIdentifier: 
+  difficulties:
+  - WaveLength_a: 20
+    WaveLength_b: 20
+    WaveLength_c: -0.25
+    WaveLength_d: 20
+    SpawnLimitLevel_a: 1
+    SpawnLimitLevel_b: 5
+    SpawnLimit_a: 2
+    SpawnLimit_b: 3
+    WaveInterval_a: 1
+    WaveInterval_b: 4
+    WaveInterval_c: 0.25
+    WaveInterval_d: 20
