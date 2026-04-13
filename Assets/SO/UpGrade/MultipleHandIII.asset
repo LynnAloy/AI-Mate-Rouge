@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32719fd6c02bbf94bacf311c9ab57020, type: 3}
+  m_Name: MultipleHandIII
+  m_EditorClassIdentifier: 
+  upGradeName: "\u4E49\u80A2"
+  upGradeDescription: "\u9664\u4E86\u4E49\u80A2\u4E4B\u5916\u627E\u4E0D\u5230\u89E3\u91CA\u600E\u4E48\u518D\u62FF\u4E00\u628A\u6B66\u5668"
+  upGradeIcon: {fileID: 0}
+  weaponLevelUpAmount: 0
+  playerLevelUpAmount: 0
+  playerHealthUpRatio: 1
+  weaponDamageUpRatio: 1
+  playerMoveSpeedUpRatio: 1
+  playerPickUpRangeUpRatio: 1
+  getNewWeapon: 1

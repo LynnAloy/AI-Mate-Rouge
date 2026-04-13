@@ -24,3 +24,4 @@ MonoBehaviour:
   timeBetweenAttack: 0
   amount: 0
   duration: 5
+  areaAttack: 0

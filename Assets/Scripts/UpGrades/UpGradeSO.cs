@@ -14,6 +14,7 @@ public class UpGradeSO : ScriptableObject
     [SerializeField] private float weaponDamageUpRatio;
     [SerializeField] private float playerMoveSpeedUpRatio;
     [SerializeField] private float playerPickUpRangeUpRatio;
+    [SerializeField] private bool getNewWeapon;
 
     public string UpGradeName => upGradeName;
     public string UpGradeDescription => upGradeDescription;
@@ -24,5 +25,6 @@ public class UpGradeSO : ScriptableObject
     public float WeaponDamageUpRatio => weaponDamageUpRatio;
     public float PlayerMoveSpeedUpRatio => playerMoveSpeedUpRatio;
     public float PlayerPickUpRangeUpRatio => playerPickUpRangeUpRatio;
+    public bool GetNewWeapon => getNewWeapon;
 
 }

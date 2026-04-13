@@ -6,13 +6,21 @@ public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private float playerMoveSpeed;
     [SerializeField] private float pickupRange;
-    [SerializeField] private List<Weapon> weapons;
+    [SerializeField] private List<Weapon> unassignedWeapons;
+    [SerializeField] private List<Weapon> assignedWeapons;
     [SerializeField] private Vector2 minBounds;
     [SerializeField] private Vector2 maxBounds;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private Vector2 moveInput;
     private Rigidbody2D rb;
+    private List<Weapon> runtimeUnassignedWeapons;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        runtimeUnassignedWeapons = new List<Weapon>(unassignedWeapons);
+    }
 
     void Start()
     {
@@ -26,6 +34,18 @@ public class PlayerController : Singleton<PlayerController>
         if(spriteRenderer == null)
         {
             Debug.Log("PlayerController: SpriteRenderer component not found in children.");
+        }
+        if (assignedWeapons.Count == 0)
+        {
+            AddWeapon(GetRandomWeaponIndex());
+        }
+        foreach(var weapon in assignedWeapons)
+        {
+            weapon.gameObject.SetActive(true);
+        }
+        foreach(var weapon in assignedWeapons)
+        {
+            Debug.Log($"PlayerController: Assigned weapon is {weapon == null}");
         }
     }
 
@@ -67,6 +87,22 @@ public class PlayerController : Singleton<PlayerController>
         rb.MovePosition(desired);
     }
 
+    public int GetRandomWeaponIndex()
+    {
+        return UnityEngine.Random.Range(0, runtimeUnassignedWeapons.Count);
+    }
+
+    public void AddWeapon(int weaponIndex)
+    {
+        if (weaponIndex < runtimeUnassignedWeapons.Count)
+        {
+            var weapon = runtimeUnassignedWeapons[weaponIndex];
+            assignedWeapons.Add(weapon);
+            weapon.gameObject.SetActive(true);
+            runtimeUnassignedWeapons.RemoveAt(weaponIndex);
+        }
+    }
+
     public float GetPickUpRange()
     {
         return pickupRange;
@@ -85,10 +121,16 @@ public class PlayerController : Singleton<PlayerController>
     public void SetPlayerMoveSpeed(float ratio)
     {
         playerMoveSpeed *= ratio;
+        playerMoveSpeed = Mathf.Clamp(playerMoveSpeed, 0.1f, 20f);
     }
 
-    public List<Weapon> GetWeapons()
+    public List<Weapon> GetAssignedWeapons()
     {
-        return weapons;
+        return assignedWeapons;
+    }
+
+    public List<Weapon> GetUnassignedWeapons()
+    {
+        return runtimeUnassignedWeapons;
     }
 }

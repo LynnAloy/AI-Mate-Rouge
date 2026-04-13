@@ -5,18 +5,36 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    //Variable
+    [SerializeField] private int a;//a stands for log function base
+    //Reference
+    [SerializeField] protected WeaponSO weaponSO;
+    //[SerializeField] private EnemyDamager enemyDamager;
+
     public int WeaponLevel;
     public Action HasLeveledUp;
-    protected float damage;
-    [SerializeField] private int a;//a stands for log function base
-    [SerializeField] protected WeaponSO weaponSO;
-    //For testing leveling weapon
+    
+    private IDamager iDamager;
+    protected float attackRange;
+    protected float attackSpeed;
+    protected float timeBetweenAttack;
 
     protected virtual void Awake()
     {
-        damage = weaponSO.Damage;
+        attackRange = weaponSO.AttackRange;
+        attackSpeed = weaponSO.AttackSpeed;
+        timeBetweenAttack = weaponSO.TimeBetweenAttack;
+        iDamager = GetComponentInChildren<IDamager>(true);
+        if (iDamager == null)
+        {
+            Debug.LogError("Weapon: No IDamager component found in children.");
+        }
     }
 
+    private void Start()
+    {
+       
+    }
 
     protected void WeaponLevelUp()
     {
@@ -28,28 +46,8 @@ public class Weapon : MonoBehaviour
     {
         WeaponLevel += upAmount;
         HasLeveledUp?.Invoke();
-    }
-
-    public virtual void SetWeaponDamage(float ratio)
-    {
-        damage *= ratio;
-    }
-    
-    public float GetWeaponDamage()
-    {
-        Debug.Log($"Weapon: Damage - {damage}");
-        return damage;
-    }
-
-
-    protected float LevelToRatioDamage(int weaponLevel)
-    {
-        return Mathf.Log(weaponLevel, a) + 1;
-    }
-
-    protected float LevelToRatioDuration(int weaponLevel)
-    {
-        return Mathf.Log(weaponLevel, a) + 1;
+        Debug.Log($"Weapon: iDamager in weapon is {iDamager == null}");
+        iDamager.OnWeaponLevelUp(WeaponLevel);
     }
 
     protected float LevelToRatioAttackSpeed(int weaponLevel)
@@ -58,6 +56,11 @@ public class Weapon : MonoBehaviour
     }
 
     protected float LevelToRatioAttackRange(int weaponLevel)
+    {
+        return Mathf.Log(weaponLevel, a) + 1;
+    }
+
+    protected float LevelToTimeBetweenAttack(int weaponLevel)
     {
         return Mathf.Log(weaponLevel, a) + 1;
     }

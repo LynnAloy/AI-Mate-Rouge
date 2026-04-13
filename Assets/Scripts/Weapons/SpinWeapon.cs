@@ -8,32 +8,23 @@ public class SpinWeapon : Weapon
 {
     [SerializeField] private float spawnInterval;
     [SerializeField] private Transform holder, fireballToSpawn;
-    //Variables from weaponSO
-    private float attackSpeed;
-    private float attackRange;
-    private float timeBetweenAttack;
-    private int amount;
-    //References
-    [SerializeField] private EnemyDamager damager;
-
+    //local variable
     private float spawnTimer;
+    private float baseAttackRange;
+    private float baseAttackSpeed;
 
     protected override void Awake()
     {
         base.Awake();
         spawnTimer = spawnInterval;
-        if(damager == null)
-        {
-            Debug.LogError("SpinWeapon: EnemyDamager reference not set.");
-        }
+        baseAttackRange = attackRange;
+        baseAttackSpeed = attackSpeed;
     }
 
     private void Start()
     {
         InitWeapon();
-        HasLeveledUp += WeaponLevelUp;
         HasLeveledUp += SetSpinWeapon;
-        HasLeveledUp += SetDamager;
     }
 
     private void Update()
@@ -43,42 +34,31 @@ public class SpinWeapon : Weapon
         if(spawnTimer <= 0f)
         {
             spawnTimer = spawnInterval;
-            Instantiate(fireballToSpawn, fireballToSpawn.position, fireballToSpawn.rotation, holder).gameObject.SetActive(true);
+            var instanceObject = Instantiate(fireballToSpawn, fireballToSpawn.position, fireballToSpawn.rotation, holder);
+            Debug.Log($"SpinWeapon: Spawned fireball is {instanceObject == null}");
+            instanceObject.gameObject.SetActive(true);
         }
     }
 
     private void InitWeapon()
     {
-        attackSpeed = weaponSO.AttackSpeed;
-        timeBetweenAttack = weaponSO.TimeBetweenAttack;
-        amount = weaponSO.Amount;
-        attackRange = weaponSO.AttackRange;
         transform.localScale = Vector3.one * attackRange;
+        Debug.Log($"SpinWeapon: The attack range of SpinWeapon is {transform.localScale}");
     }
 
     private void SetSpinWeapon()
     {
-        attackRange = LevelToRatioAttackRange(WeaponLevel);
+        attackRange = baseAttackRange * LevelToRatioAttackRange(WeaponLevel);
         Debug.Log($"SpinWeapon: AttackRange updated to {attackRange}.");
+        attackSpeed = baseAttackSpeed * LevelToRatioAttackSpeed(WeaponLevel);
+        Debug.Log($"SpinWeapon: AttackSpeed updated to {attackSpeed}.");
     }
 
-    
-    private void SetDamager()
-    {
-        damager.SetDamage(LevelToRatioDamage(WeaponLevel));
-        damager.SetDuration(LevelToRatioDuration(WeaponLevel));
-        damager.SetTargetSize(LevelToRatioAttackRange(WeaponLevel));
-    }
-
-    
-    
     private void OnDestroy()
     {
         if (HasLeveledUp != null)
         {
-            HasLeveledUp -= WeaponLevelUp;
             HasLeveledUp -= SetSpinWeapon;
-            HasLeveledUp -= SetDamager;
         }
     }
     

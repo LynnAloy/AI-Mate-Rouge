@@ -15,30 +15,13 @@ public enum WeaponType
 public class WeaponSO : ScriptableObject
 {
     [SerializeField] private Sprite weaponSprite;
-    [SerializeField] private float damage;
-    [SerializeField] private bool isExternal;
-    [SerializeField] private bool canChangeSize;
-    [SerializeField] private bool canKnockBack;
-    [SerializeField] private float knockBackDistance;
-    [SerializeField] private bool destoryParent;
-    [SerializeField] private float attackSpeed;
-    [SerializeField] private float attackRange;
-    [SerializeField] private float timeBetweenAttack;
-    [SerializeField] private int amount;
-    [SerializeField] private float duration;
-
+    [SerializeField] private float attackSpeed;//用于SpinWeapon，damager旋转的速度
+    [SerializeField] private float attackRange;//用于SpinWeapon时表示damager实例距离玩家的range,projectile时为攻击距离
+    [SerializeField] private float timeBetweenAttack;//用于projectile表示射击interval
 
 
     public Sprite WeaponSprite => weaponSprite;
-    public float Damage => damage;
-    public bool IsExternal => isExternal;
-    public bool CanChangeSize => canChangeSize;
-    public bool CanKnockBack => canKnockBack;
-    public float KnockBackDistance => knockBackDistance;
-    public bool DestoryParent => destoryParent;
     public float AttackSpeed => attackSpeed;
     public float AttackRange => attackRange;
     public float TimeBetweenAttack => timeBetweenAttack;
-    public int Amount => amount;
-    public float Duration => duration;
 }

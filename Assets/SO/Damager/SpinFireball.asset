@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfb9a22d3fe1884c9f83e6cdbb1e67e, type: 3}
+  m_Name: SpinFireball
+  m_EditorClassIdentifier: 
+  damageAmount: 61.56891
+  damagerSize: 1.2313782
+  isExternal: 0
+  destroyParent: 1
+  canChangedSize: 1
+  canKnockBack: 1
+  knockBackDistance: 2.5
+  lifeTime: 2
+  changeSizeTime: 2
+  isAreaDamage: 0
+  areaDamageInterval: 0
+  destroyOnImpact: 0

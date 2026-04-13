@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9028433166127933274}
   - component: {fileID: 3403608674848665796}
   - component: {fileID: 2640889234021282557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NightKiller
   m_TagString: Enemy
   m_Icon: {fileID: 0}
