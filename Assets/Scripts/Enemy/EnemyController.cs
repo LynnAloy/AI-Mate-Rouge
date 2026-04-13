@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private int enemyLevel;
     private int expToDrop;
+    private float proabilityToDropKeyWord;
+    private bool isBoss;
 
     private float hitTimer;
 
@@ -36,6 +38,8 @@ public class EnemyController : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         spriteRenderer.sprite = enemySO.EnemySprite;
         animator.runtimeAnimatorController.animationClips[0] = enemySO.Idle;
+        proabilityToDropKeyWord = enemySO.ProbabilityToDropKeyWord;
+        isBoss = enemySO.IsBoss;
         //Debug.Log(currentHealth);
     }
 
@@ -97,6 +101,11 @@ public class EnemyController : MonoBehaviour
         if(currentHealth <= 0)
         {
             ExperienceLevelController.Instance.SpawnExp(transform.position, expToDrop);
+            float randomValue = UnityEngine.Random.Range(0.0f, 1.0f);
+            if(randomValue <= proabilityToDropKeyWord)
+            {
+                KeyWordController.Instance.SpawnKeyWord(transform.position);
+            }
             Destroy(gameObject);
         }
 

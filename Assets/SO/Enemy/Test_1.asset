@@ -21,3 +21,5 @@ MonoBehaviour:
   move: {fileID: 0}
   enemyLevel: 1
   expToDrop: 1
+  probabilityToDropKeyWord: 0.6
+  isBoss: 0

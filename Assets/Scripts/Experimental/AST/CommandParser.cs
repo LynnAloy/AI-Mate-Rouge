@@ -7,13 +7,16 @@ namespace experimental
 {
     public class CommandParser
     {
-        private Regex followRegex = new Regex(@"^follow\s+player$");
+        private Regex followRegex = new Regex(@"^follow\s+(?<target>player|enemy)$", RegexOptions.IgnoreCase);
+        private Regex attackRegex = new Regex(@"^attack\s+(?<target>player|enemy)$");
 
         public CommandNode Parse(string input)
         {
-            if (followRegex.IsMatch(input))
+            var m = followRegex.Match(input);
+            if(m.Success)
             {
-                return new CommandNode("follow", new TargetNode("player"));
+                string targetName = m.Groups["target"].Value.ToLower();
+                return new CommandNode("follow", new TargetNode(targetName));
             }
             Debug.Log("Invalid command.");
             return null;

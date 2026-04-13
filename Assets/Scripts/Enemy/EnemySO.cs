@@ -15,6 +15,8 @@ public class EnemySO : ScriptableObject
     [SerializeField] private AnimationClip move;
     [SerializeField] private int enemyLevel;
     [SerializeField] private int expToDrop;
+    [SerializeField] private float probabilityToDropKeyWord;
+    [SerializeField] private bool isBoss;
 
 
     public Sprite EnemySprite => enemySprite;
@@ -26,4 +28,6 @@ public class EnemySO : ScriptableObject
     public float EnemyMaxMoveSpeed => enemyMaxMoveSpeed;
     public int EnemyLevel => enemyLevel;
     public int ExpToDrop => expToDrop;
+    public float ProbabilityToDropKeyWord => probabilityToDropKeyWord;
+    public bool IsBoss => isBoss;
 }
