@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32719fd6c02bbf94bacf311c9ab57020, type: 3}
+  m_Name: ComputerScience
+  m_EditorClassIdentifier: 
+  upGradeName: "\u8BA1\u7B97\u673A\u79D1\u5B66\u5BB6"
+  upGradeDescription: "\u60CA\u4EBA\u7684\u667A\u6167...\u73B0\u5728\u4F60\u80FD\u67E5\u770B\u6240\u6709\u6307\u4EE4\u4E86\uFF01"
+  upGradeIcon: {fileID: 0}
+  weaponLevelUpAmount: 0
+  playerLevelUpAmount: 0
+  playerHealthUpRatio: 1
+  weaponDamageUpRatio: 1
+  playerMoveSpeedUpRatio: 1
+  playerPickUpRangeUpRatio: 1
+  getNewWeapon: 0
+  canUnlockKeyWordManul: 1

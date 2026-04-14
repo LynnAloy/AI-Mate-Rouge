@@ -108,6 +108,10 @@ public class UpGradeController : Singleton<UpGradeController>
         {
             player.AddWeapon(player.GetRandomWeaponIndex());
         }
+        if(upGradeSO.CanUnlockKeyWordManul)
+        {
+            OpenReferencePanel.Instance.CanInteractWithButton(true);
+        }
     }
 
     private void ShuffleList(List<UpGradeSO> upGrades)

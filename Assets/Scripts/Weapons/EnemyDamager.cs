@@ -34,6 +34,8 @@ public class EnemyDamager : MonoBehaviour, IDamager
     private float areaDamagerTimer; //how often trigger area attack weapon damage
     private HashSet<EnemyController> enemiesInRange = new();
     private bool isInitialized = false;
+    private bool isAIWeapon = false;
+    private bool canDamagePlayer = false;
     //private static bool hasInitializedBase = false;//由于在运行时写入了SO，所以如果重新开始游戏需要重新初始化
 
     private void OnEnable()
@@ -135,12 +137,23 @@ public class EnemyDamager : MonoBehaviour, IDamager
                 {
                     if (e != null)
                     {
-                        e.TakeDamage(damageAmount);
+                        if (CanAIDamageEnemy())
+                        {
+                            e.TakeDamage(damageAmount);
+                        }
                     }
                     else
                     {
                         enemiesInRange.Remove(e);
                     }
+                }
+            }
+            if(canDamagePlayer)
+            {
+                var player = GameObject.FindGameObjectWithTag("Player");
+                if(player != null)
+                {
+                    player.GetComponent<PlayerHealthController>().TakeDamage(damageAmount);
                 }
             }
             areaDamagerTimer = areaDamageInterval;
@@ -153,8 +166,19 @@ public class EnemyDamager : MonoBehaviour, IDamager
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                //Debug.Log("Hit");
-                collision.GetComponent<EnemyController>().TakeDamage(damageAmount, canKnockBack, knockBackDistance);
+                if (CanAIDamageEnemy())
+                {
+                    //Debug.Log("Hit");
+                    collision.GetComponent<EnemyController>().TakeDamage(damageAmount, canKnockBack, knockBackDistance);
+                    if (destroyOnImpact == true)
+                    {
+                        Destroy(gameObject);
+                    }
+                }
+            }
+            else if (collision.gameObject.CompareTag("Player") && canDamagePlayer)
+            {
+                collision.GetComponent<PlayerHealthController>().TakeDamage(damageAmount);
                 if (destroyOnImpact == true)
                 {
                     Destroy(gameObject);
@@ -250,5 +274,28 @@ public class EnemyDamager : MonoBehaviour, IDamager
         damagerSO.DamagerSize = baseDamagerSO.DamagerSize;
         gameObject.transform.localScale = Vector3.one * damagerSO.DamagerSize;
         targetSize = new Vector3(damagerSO.DamagerSize, damagerSO.DamagerSize, 1);
+    }
+
+    private bool CanAIDamageEnemy()
+    {
+        if(!isAIWeapon)
+        {
+            return true;
+        }
+        if(AIController.Instance != null)
+        {
+            return AIController.Instance.GetCanAIAttackEnemy();
+        }
+        return false;
+    }
+
+    public void SetIsAIWeapon(bool isAIWeapon)
+    {
+        this.isAIWeapon = isAIWeapon;
+    }
+
+    public void SetCanDamagePlayer(bool canDamagePlayer)
+    {
+        this.canDamagePlayer = canDamagePlayer;
     }
 }

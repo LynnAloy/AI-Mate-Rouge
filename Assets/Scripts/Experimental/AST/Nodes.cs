@@ -25,19 +25,26 @@ public class TargetNode : Node
     }
 }
 
-public class AssignmentNode : Node
+public class AssignmentIntNode : Node
 {
     public string Lhs { get; }
-    public string Op1 { get; }   // 变量名或字面量
-    public string Operator { get; } // "+", "-", "*", "/" 或 null
-    public string Op2 { get; }   // 变量名或字面量 或 null
+    public int Value { get; }
 
-    public AssignmentNode(string lhs, string op1, string op, string op2)
+    public AssignmentIntNode(string lhs, int value)
     {
         Lhs = lhs;
-        Op1 = op1;
-        Operator = op;
-        Op2 = op2;
+        Value = value;
+    }
+}
+
+public class AssignmentBoolNode : Node
+{
+    public string Lhs { get; }
+    public bool Value { get; }
+    public AssignmentBoolNode(string lhs, bool value)
+    {
+        Lhs = lhs;
+        Value = value;
     }
 }
 

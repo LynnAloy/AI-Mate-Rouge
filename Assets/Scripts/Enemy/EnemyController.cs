@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     private int expToDrop;
     private float proabilityToDropKeyWord;
     private bool isBoss;
+    private int coinToDrop;
 
     private float hitTimer;
 
@@ -40,6 +41,7 @@ public class EnemyController : MonoBehaviour
         animator.runtimeAnimatorController.animationClips[0] = enemySO.Idle;
         proabilityToDropKeyWord = enemySO.ProbabilityToDropKeyWord;
         isBoss = enemySO.IsBoss;
+        coinToDrop = enemySO.CoinToDrop;
         //Debug.Log(currentHealth);
     }
 
@@ -106,11 +108,13 @@ public class EnemyController : MonoBehaviour
             {
                 KeyWordController.Instance.SpawnKeyWord(transform.position);
             }
+            CoinController.Instance.SpawnCoin(transform.position, UnityEngine.Random.Range(0, coinToDrop + 1));
             Destroy(gameObject);
         }
 
         DamageNumberController.Instance.SpawnDamageNumber(damageToTake, transform.position);
     }
+
 
     public void TakeDamage(float damageToTake, bool canKnockBack, float knockBackDistance)
     {
@@ -119,6 +123,15 @@ public class EnemyController : MonoBehaviour
         {
             Vector3 knockBackDirection = (transform.position - target.position).normalized;
             StartCoroutine(KnockBackCoroutine(knockBackDirection, knockBackDistance, knockBackTime));
+        }
+    }
+
+    public void RecoverEnemyHealth(float amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > enemySO.EnemyHealth)
+        {
+            currentHealth = enemySO.EnemyHealth;
         }
     }
 

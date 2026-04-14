@@ -50,5 +50,10 @@ public class KeyWordPickUp : MonoBehaviour
             KeyWordController.Instance.AddKeyWord();
             Destroy(gameObject);
         }
+        if(collision.CompareTag("AI") && AIController.Instance.GetCanPickUpKeyWord())
+        {
+            KeyWordController.Instance.AddKeyWord();
+            Destroy(gameObject);
+        }
     }
 }

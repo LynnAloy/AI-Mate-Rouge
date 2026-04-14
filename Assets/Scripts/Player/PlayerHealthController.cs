@@ -18,10 +18,6 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(10f);
-        }
         SetHealthBar();
     }
 
@@ -36,6 +32,15 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    public void RecoverPlayerHealth(float amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
         }
     }
 

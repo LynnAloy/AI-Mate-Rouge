@@ -17,8 +17,11 @@ namespace experimental
 
         private Regex followRegex = new Regex(@"^follow\s+(?<target>player|enemy)$", RegexOptions.IgnoreCase);
         private Regex attackRegex = new Regex(@"^attack\s+(?<target>player|enemy)$", RegexOptions.IgnoreCase);
-        private Regex pickupRegex = new Regex(@"^pickup\s+(?<target>experience|keyword)$", RegexOptions.IgnoreCase);
-        private Regex assignRegex = new Regex(@"^(?<lhs>[a-zA-Z_]\w*)\s*=\s*(?<op1>[a-zA-Z_]\w*|\d+)\s*(?<op>[+\-*/])?\s*(?<op2>[a-zA-Z_]\w*|\d+)?$", RegexOptions.IgnoreCase);
+        private Regex giveRegex = new Regex(@"^give\s+(?<target>weapon)$", RegexOptions.IgnoreCase);
+        private Regex pickupRegex = new Regex(@"^pickup\s+(?<target>experience|keyword|money)$", RegexOptions.IgnoreCase);
+        private Regex assignIntRegex = new Regex(@"^(?<lhs>[a-zA-Z_]\w*)\s*=\s*(?<value>\d+)\s*$", RegexOptions.IgnoreCase);
+        private Regex assignBoolRegx = new Regex(@"^(?<lhs>[a-zA-Z_]\w*)\s*=\s*(?<value>true|false)\s*$", RegexOptions.IgnoreCase);
+
 
         private CancellationTokenSource cts;
 
@@ -29,10 +32,14 @@ namespace experimental
             this.onFreshKeyWordsDisplay = onFreshKeyWordsDisplay;
         }
 
-        public CommandNode Parse(string input)
+        public Node Parse(string input)
         {
             var mFollow = followRegex.Match(input);
-            var mAssign = assignRegex.Match(input);
+            var mIntAssign = assignIntRegex.Match(input);
+            var mBoolAssign = assignBoolRegx.Match(input);
+            var mGive = giveRegex.Match(input);
+            var mAttack = attackRegex.Match(input);
+            var mPickUp = pickupRegex.Match(input);
             if (mFollow.Success)
             {
                 if (keyWords != null && keyWords.TryGetValue("follow", out int count) && count > 0)
@@ -47,12 +54,80 @@ namespace experimental
                     ShowWarning(warningText, "未持有'follow'嵌入词");
                 }
             }
-            
+            else if (mIntAssign.Success)
+            {
+                string lhs = mIntAssign.Groups["lhs"].Value;
+                CheckAndConsumeKeyWord(lhs);
+                int value = int.Parse(mIntAssign.Groups["value"].Value);
+                return new AssignmentIntNode(lhs, value);
+            }
+            else if(mBoolAssign.Success)
+            {
+                string lhs = mBoolAssign.Groups["lhs"].Value;
+                CheckAndConsumeKeyWord(lhs);
+                bool value = bool.Parse(mBoolAssign.Groups["value"].Value);
+                return new AssignmentBoolNode(lhs, value);
+            }
+            else if(mGive.Success)
+            {
+                if (keyWords != null && keyWords.TryGetValue("give", out int count) && count > 0)
+                {
+                    keyWords["give"]--;
+                    onFreshKeyWordsDisplay?.Invoke();
+                    string targetName = mGive.Groups["target"].Value.ToLower();
+                    return new CommandNode("give", new TargetNode(targetName));
+                }
+                else
+                {
+                    ShowWarning(warningText, "未持有'give'嵌入词");
+                }
+            }
+            else if(mAttack.Success)
+            {
+                if (keyWords != null && keyWords.TryGetValue("attack", out int count) && count > 0)
+                {
+                    keyWords["attack"]--;
+                    onFreshKeyWordsDisplay?.Invoke();
+                    string targetName = mAttack.Groups["target"].Value.ToLower();
+                    return new CommandNode("attack", new TargetNode(targetName));
+                }
+                else
+                {
+                    ShowWarning(warningText, "未持有'attack'嵌入词");
+                }
+            }
+            else if(mPickUp.Success)
+            {
+                if (keyWords != null && keyWords.TryGetValue("pickup", out int count) && count > 0)
+                {
+                    keyWords["pickup"]--;
+                    onFreshKeyWordsDisplay?.Invoke();
+                    string targetName = mPickUp.Groups["target"].Value.ToLower();
+                    return new CommandNode("pickup", new TargetNode(targetName));
+                }
+                else
+                {
+                    ShowWarning(warningText, "未持有'pickup'嵌入词");
+                }
+            }
             else
             {
                 ShowWarning(warningText, "中央处理器超载...无法解析指令");
             }
             return null;
+        }
+
+        private void CheckAndConsumeKeyWord(string keyWord)
+        {
+            if (keyWords != null && keyWords.TryGetValue(keyWord, out int count) && count > 0)
+            {
+                keyWords[keyWord]--;
+                onFreshKeyWordsDisplay?.Invoke();
+            }
+            else
+            {
+                ShowWarning(warningText, $"未持有'{keyWord}'嵌入词");
+            }
         }
 
         public async void ShowWarning(TMP_Text warningText, string message)

@@ -51,5 +51,10 @@ public class ExpPickup : MonoBehaviour
             ExperienceLevelController.Instance.GetExp(expValue);
             Destroy(gameObject);
         }
+        if(collision.CompareTag("AI") && AIController.Instance.GetCanPickUpExp())
+        {
+            ExperienceLevelController.Instance.GetExp(expValue);
+            Destroy(gameObject);
+        }
     }
 }

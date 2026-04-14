@@ -17,3 +17,5 @@ MonoBehaviour:
   - follow
   - attack
   - pickup
+  - canHeal
+  - give

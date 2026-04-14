@@ -17,6 +17,7 @@ public class EnemySO : ScriptableObject
     [SerializeField] private int expToDrop;
     [SerializeField] private float probabilityToDropKeyWord;
     [SerializeField] private bool isBoss;
+    [SerializeField] private int coinToDrop;
 
 
     public Sprite EnemySprite => enemySprite;
@@ -30,4 +31,5 @@ public class EnemySO : ScriptableObject
     public int ExpToDrop => expToDrop;
     public float ProbabilityToDropKeyWord => probabilityToDropKeyWord;
     public bool IsBoss => isBoss;
+    public int CoinToDrop => coinToDrop;
 }

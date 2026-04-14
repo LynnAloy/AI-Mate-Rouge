@@ -32,7 +32,7 @@ namespace experimental
 
         private void OnCommandSubmitted(string command)
         {
-            var node = parser.Parse(command);
+            Node node = parser.Parse(command);
             if (node != null)
             {
                 interpreter.Execute(node, controlledObj);
