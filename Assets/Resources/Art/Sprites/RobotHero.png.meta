@@ -1,0 +1,1499 @@
+fileFormatVersion: 2
+guid: fb65ce0b8e8603f4c8312b7c046e5a72
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RobotHero_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1655
+        width: 240
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11311163fda4dc642bdb05863e1719ba
+      internalID: 1633484523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_1
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1673
+        width: 230
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc5f526106d8cc4ab26424fa1596e1f
+      internalID: 1792784265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_2
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 1652
+        width: 226
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604e25199b660644aa34feed8275e04d
+      internalID: -237697659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_3
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 1648
+        width: 269
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539f7ad496e850c40ba90ebb610c2f48
+      internalID: -260423362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_4
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 1680
+        width: 220
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678fb2145d4530c4fa1fdcbbf2f47fea
+      internalID: 538045999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_5
+      rect:
+        serializedVersion: 2
+        x: 2766
+        y: 1648
+        width: 136
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6d9713301ad8b4595ee1d7e1b9a71d
+      internalID: 2019670599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_7
+      rect:
+        serializedVersion: 2
+        x: 3067
+        y: 1645
+        width: 128
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1004aed1bd8ea24b8db1ccab86a430f
+      internalID: -333949951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_8
+      rect:
+        serializedVersion: 2
+        x: 3186
+        y: 1913
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e158e65241843004f9f8c1c6e8c84e03
+      internalID: 1027582335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_9
+      rect:
+        serializedVersion: 2
+        x: 3367
+        y: 1645
+        width: 128
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d5c7bffec8f7147a210b92f9374bfb
+      internalID: 884878131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_10
+      rect:
+        serializedVersion: 2
+        x: 3486
+        y: 1913
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babe7b2b0f98e684994f33c0fc512875
+      internalID: 277805325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_11
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1647
+        width: 177
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a5f82a4ef87c7459223b4e227f690c
+      internalID: 1656429929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_12
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 1648
+        width: 265
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4885d04fb1767c43ab7e13a23644f5e
+      internalID: -1780403119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_13
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 1647
+        width: 200
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e84876068245dd449ce3f722dc87db6
+      internalID: 1342883825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_14
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 1687
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d61d89cfc38fba47b38de1483c77214
+      internalID: -1176902048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_25
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1198
+        width: 123
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdeb70de00071014e8b6c28ca0fbbd59
+      internalID: -1735142656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_26
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1195
+        width: 123
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca5c023206cb6b45b5f2c663b90301b
+      internalID: -2067306534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_27
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1198
+        width: 123
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5564826ae2cefd94eb191905302a7573
+      internalID: 1686047978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_28
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 1198
+        width: 124
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362cb0d63623dea4b8455dc10e874ed1
+      internalID: -1023468813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_29
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1198
+        width: 124
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796f39f0756ee4a4a80ee239a09dffff
+      internalID: -915699708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_30
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 1197
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ad5f866f3bf044eb37ba02d4563d70
+      internalID: 1923430833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_31
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 1197
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c57f73a86794044ebedc516a35a7995
+      internalID: -2103422231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_32
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 1197
+        width: 124
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61faca7137e7fd34eac214d32cfba9ec
+      internalID: -1111340743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_33
+      rect:
+        serializedVersion: 2
+        x: 2488
+        y: 1198
+        width: 125
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694ef65e191521e43a204b25bd289d9e
+      internalID: -527804485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_34
+      rect:
+        serializedVersion: 2
+        x: 2787
+        y: 1198
+        width: 126
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82218154a8483b4280f8aed64cc0870
+      internalID: 2099068451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_35
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 1198
+        width: 124
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d15aa5aeb7d914c99b920e5f2edae7
+      internalID: -1590851325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_36
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 1197
+        width: 125
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4899ef538ad1f146a5c142ad5766b10
+      internalID: -2073483854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_37
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 899
+        width: 125
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02761c04e9a50cb4ca470cbe32facb7f
+      internalID: 1471485729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_38
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 899
+        width: 126
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae158b64818076469ccba37f86a6cc2
+      internalID: 1733361448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_39
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 898
+        width: 127
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bec3cc3fe97f56429f0bafd56578162
+      internalID: -199157668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_40
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 898
+        width: 125
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532b9c50931131a408c470ee0e910e81
+      internalID: -1351625432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_41
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 898
+        width: 125
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4a4942122232a4187a17e7b72614eb
+      internalID: 390990419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_42
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 898
+        width: 125
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0959b513bcdca14db8402694603418a
+      internalID: -287369523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_43
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 898
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c16cbaae53c2841855fc290ee252c5
+      internalID: -1519136662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_44
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 898
+        width: 124
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f30b2cd096dd2b4b9a54ff1e2343def
+      internalID: -836556626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_45
+      rect:
+        serializedVersion: 2
+        x: 2488
+        y: 898
+        width: 125
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efe3c2005549964ab5cd73eb1474e0b
+      internalID: 1831114660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_46
+      rect:
+        serializedVersion: 2
+        x: 2789
+        y: 896
+        width: 123
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37b931ce2e147c4b89e05d1339d696e
+      internalID: -338856147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_47
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 899
+        width: 123
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeda9ab4bbefc6d4c9fa7e05b91074ed
+      internalID: -404607798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_48
+      rect:
+        serializedVersion: 2
+        x: 3390
+        y: 899
+        width: 123
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec7ffc584b90954a94ebdf15da390be
+      internalID: 1712635917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_54
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 448
+        width: 123
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1ba5f3a562dc04fb4c9dab9e0a31c4
+      internalID: -2000662299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_55
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 448
+        width: 124
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ab229f5716a484e92de62a3bd3dfb7
+      internalID: -1570766441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_56
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 448
+        width: 125
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7df4ef6002cc4f42be1a06c725106c0
+      internalID: 1537255020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_57
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 448
+        width: 124
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c2e28f1a8a84b4ba429d04eea58753
+      internalID: 1591907362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_58
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 448
+        width: 124
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57f00d4e21f5dd42a2f3aca930b34f8
+      internalID: -571970426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_59
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 446
+        width: 125
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c052eba9ac39d7a458e3f4a66ee448ab
+      internalID: 1977793657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_60
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 446
+        width: 125
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc8bdf4f17e0e2458f2dbcd0e6a6afb
+      internalID: 1936593967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_61
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 446
+        width: 124
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36998552db4569646a835f4e3f6adfb3
+      internalID: -1645236297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_62
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 448
+        width: 127
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41734e2f2f69fd44e96cabf0773a390d
+      internalID: 1111014679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_63
+      rect:
+        serializedVersion: 2
+        x: 2787
+        y: 448
+        width: 126
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0d12457e986a54c9c5d0e8c1678f98
+      internalID: -1443412932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_64
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 448
+        width: 124
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f944cbec32654469cd3af2d18deb61
+      internalID: -433247359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_65
+      rect:
+        serializedVersion: 2
+        x: 3387
+        y: 446
+        width: 126
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501b3b49bb33c7a41b19ce9239162bb3
+      internalID: 696709556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_66
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 149
+        width: 125
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f64d5323e51a29459e60dcd55448c32
+      internalID: 810966438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_67
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 149
+        width: 126
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7278c51d574ab4e4b944d62da003f6f7
+      internalID: 2129575363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_68
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 147
+        width: 127
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fa84444ff656943a222ef15f87eb3b
+      internalID: 486104297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_69
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 147
+        width: 125
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58b1773133ab594d9fcdd2bda769fad
+      internalID: -263453377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_70
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 147
+        width: 125
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c5b6a282ab0604f8a36643a448e365
+      internalID: -2017388703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_71
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 147
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c276829a2661d1d4889f23f68c3253c9
+      internalID: 229681214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_72
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 147
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e017a0f47dd0d54dabea4915cc53a33
+      internalID: -1435607483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_73
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 147
+        width: 124
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064172036c7aab041bc870b6a12b3239
+      internalID: -1715031479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_74
+      rect:
+        serializedVersion: 2
+        x: 2488
+        y: 147
+        width: 125
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f9a418bf411bb419a7390a766aabe6
+      internalID: 1560501419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_75
+      rect:
+        serializedVersion: 2
+        x: 2789
+        y: 149
+        width: 123
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78a11ab56ee6d043bec935b0417655b
+      internalID: -104677564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_76
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 149
+        width: 123
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aadcb04ff2379e4c9522dbd1f664565
+      internalID: -747167992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotHero_77
+      rect:
+        serializedVersion: 2
+        x: 3390
+        y: 149
+        width: 123
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c80960c8432adf41a363bb8b1f583f0
+      internalID: -1484237693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RobotHero_0: 1633484523
+      RobotHero_1: 1792784265
+      RobotHero_10: 277805325
+      RobotHero_11: 1656429929
+      RobotHero_12: -1780403119
+      RobotHero_13: 1342883825
+      RobotHero_14: -1176902048
+      RobotHero_15: -1032519292
+      RobotHero_16: 703443416
+      RobotHero_17: -1802165202
+      RobotHero_18: -186745120
+      RobotHero_19: -1914491995
+      RobotHero_2: -237697659
+      RobotHero_20: -1314601542
+      RobotHero_21: -735187891
+      RobotHero_22: -1373795307
+      RobotHero_23: -965491137
+      RobotHero_24: 1651367648
+      RobotHero_25: -1735142656
+      RobotHero_26: -2067306534
+      RobotHero_27: 1686047978
+      RobotHero_28: -1023468813
+      RobotHero_29: -915699708
+      RobotHero_3: -260423362
+      RobotHero_30: 1923430833
+      RobotHero_31: -2103422231
+      RobotHero_32: -1111340743
+      RobotHero_33: -527804485
+      RobotHero_34: 2099068451
+      RobotHero_35: -1590851325
+      RobotHero_36: -2073483854
+      RobotHero_37: 1471485729
+      RobotHero_38: 1733361448
+      RobotHero_39: -199157668
+      RobotHero_4: 538045999
+      RobotHero_40: -1351625432
+      RobotHero_41: 390990419
+      RobotHero_42: -287369523
+      RobotHero_43: -1519136662
+      RobotHero_44: -836556626
+      RobotHero_45: 1831114660
+      RobotHero_46: -338856147
+      RobotHero_47: -404607798
+      RobotHero_48: 1712635917
+      RobotHero_49: 1672186103
+      RobotHero_5: 2019670599
+      RobotHero_50: -1960656044
+      RobotHero_51: -1785855424
+      RobotHero_52: -1640514369
+      RobotHero_53: -1971269505
+      RobotHero_54: -2000662299
+      RobotHero_55: -1570766441
+      RobotHero_56: 1537255020
+      RobotHero_57: 1591907362
+      RobotHero_58: -571970426
+      RobotHero_59: 1977793657
+      RobotHero_6: -594622781
+      RobotHero_60: 1936593967
+      RobotHero_61: -1645236297
+      RobotHero_62: 1111014679
+      RobotHero_63: -1443412932
+      RobotHero_64: -433247359
+      RobotHero_65: 696709556
+      RobotHero_66: 810966438
+      RobotHero_67: 2129575363
+      RobotHero_68: 486104297
+      RobotHero_69: -263453377
+      RobotHero_7: -333949951
+      RobotHero_70: -2017388703
+      RobotHero_71: 229681214
+      RobotHero_72: -1435607483
+      RobotHero_73: -1715031479
+      RobotHero_74: 1560501419
+      RobotHero_75: -104677564
+      RobotHero_76: -747167992
+      RobotHero_77: -1484237693
+      RobotHero_78: -176192836
+      RobotHero_79: -473167368
+      RobotHero_8: 1027582335
+      RobotHero_80: 973781955
+      RobotHero_81: -952982579
+      RobotHero_82: -2004085076
+      RobotHero_9: 884878131
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

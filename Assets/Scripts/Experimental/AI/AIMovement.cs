@@ -6,6 +6,8 @@ namespace experimental
     public class AIMovement : Singleton<AIMovement>
     {
         [SerializeField] private float aiSpeed = 4.0f;
+        [SerializeField] private float desiredDistance = 0.5f;
+        [SerializeField] private float moveThreshold = 1.0f;
         private Coroutine followCoroutine;
 
         // 意图标志
@@ -15,9 +17,22 @@ namespace experimental
         // 当前正在跟随的目标（用于判断和切换）
         private GameObject currentTarget;
 
+        //Reference
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
+
+        private void Start()
+        {
+            animator = GetComponentInChildren<Animator>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
+
+
+
         // 外部调用：设置意图并尝试立即跟随（若目标存在）
         public void RequestFollow(string targetName)
         {
+            Debug.Log($"AI Movement: Before: canFollowPlayer = {canFollowPlayer}, canFollowEnemy = {canFollowEnemy}");
             if (targetName == "player")
             {
                 canFollowPlayer = true;
@@ -28,6 +43,7 @@ namespace experimental
                 canFollowEnemy = true;
                 TryFollowBestTarget();
             }
+            Debug.Log($"AI Movement: After: canFollowPlayer = {canFollowPlayer}, canFollowEnemy = {canFollowEnemy}");
         }
 
         // 外部调用：取消某个意图（可选）
@@ -76,6 +92,7 @@ namespace experimental
             if (currentTarget == target) return; // 已经在跟随
             StopFollowing();
             currentTarget = target;
+            Debug.Log($"AI Movement: Start following {target.name}");
             followCoroutine = StartCoroutine(FollowTargetCoroutine(target));
         }
 
@@ -93,9 +110,59 @@ namespace experimental
         // 主跟随协程
         private IEnumerator FollowTargetCoroutine(GameObject target)
         {
+            float stopSqrt = desiredDistance * desiredDistance;
             while (target != null)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, aiSpeed * Time.deltaTime);
+                float distanceSqrt = (transform.position - target.transform.position).sqrMagnitude;
+                if(distanceSqrt <= stopSqrt)
+                {
+                    // 已经在期望距离内，停止移动但继续监视目标状态
+                    yield return null;
+                }
+                else
+                {
+                    // 计算目标点：在目标周围 desiredDistance 处的点（从目标指向 AI 的方向）
+                    Vector3 dirFromTarget = (transform.position - target.transform.position).normalized;
+                    Vector3 desiredPos = target.transform.position + dirFromTarget * desiredDistance;
+
+                    // 如果 AI 恰好在目标点的另一侧（dirFromTarget 可能为零），退回到直接 MoveTowards 目标位置
+                    if (dirFromTarget == Vector3.zero)
+                    {
+                        desiredPos = target.transform.position + Vector3.forward * desiredDistance;
+                    }
+                    Vector3 prePos = transform.position;
+                    // 向 desiredPos 移动（而不是直接到 target）
+                    transform.position = Vector3.MoveTowards(transform.position, desiredPos, aiSpeed * Time.deltaTime);
+                    // 更新动画参数
+                    Vector3 moveDelta = transform.position - prePos;
+                    if(moveDelta.x < 0)
+                    {
+                        spriteRenderer.flipX = true;
+                    }
+                    else if(moveDelta.x > 0)
+                    {
+                        spriteRenderer.flipX = false;
+                    }
+                    float frameDistance = moveDelta.magnitude;
+                    float currentSpeed = frameDistance / Mathf.Max(Time.deltaTime, 1e-6f);
+                    if(currentSpeed > moveThreshold)
+                    {
+                        animator.SetBool("isMoving", true);
+                    }
+                    else
+                    {
+                        animator.SetBool("isMoving", false);
+                    }
+                }
+                if (currentTarget != null && currentTarget.CompareTag("Player") && canFollowEnemy && GameObject.FindWithTag("Enemy") != null)
+                {
+                    GameObject enemy = GameObject.FindWithTag("Enemy");
+                    if(enemy != null)
+                    {
+                        StartFollowing(enemy);
+                        yield break;
+                    }
+                }
                 yield return null;
             }
 

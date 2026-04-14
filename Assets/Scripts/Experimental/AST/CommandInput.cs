@@ -10,12 +10,23 @@ namespace experimental
     {
         [SerializeField] private TMP_InputField inputField;
         [SerializeField] private GameObject controlledObj;
+        [SerializeField] private TMP_Text warningText;
 
-        private CommandParser parser = new();
+        private CommandParser parser;
         private Interpreter interpreter = new();
+        public Action OnFreshKeyWordsDisplay;
 
         private void Start()
         {
+            if (KeyWordController.Instance != null && warningText != null)
+            {
+                var keyWordsOwned = KeyWordController.Instance.GetKeyWordsOwned();
+                parser = new CommandParser(keyWordsOwned, warningText, () => OnFreshKeyWordsDisplay?.Invoke());
+            }
+            else
+            {
+                Debug.LogError("CommandInput: KeyWordController instance or warningText is null.");
+            }
             inputField.onSubmit.AddListener(OnCommandSubmitted);
         }
 

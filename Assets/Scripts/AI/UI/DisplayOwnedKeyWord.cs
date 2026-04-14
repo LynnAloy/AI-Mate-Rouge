@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using experimental;
 
 public class DisplayOwnedKeyWord : MonoBehaviour
 {
     [SerializeField] private TMP_Text ownedKeyWordsText;
+    [SerializeField] private CommandInput commandInput;
 
     private Dictionary<string, int> keyWordsOwned = new();
 
@@ -14,6 +16,7 @@ public class DisplayOwnedKeyWord : MonoBehaviour
     {
         ownedKeyWordsText.text = "当前拥有的嵌入词: \n";
         OpenAIPanel.Instance.OnFreshKeyWordsDisplay += UpdateDisplay;
+        commandInput.OnFreshKeyWordsDisplay += UpdateDisplay;
     }
 
     // Start is called before the first frame update
@@ -44,6 +47,10 @@ public class DisplayOwnedKeyWord : MonoBehaviour
         if(OpenAIPanel.Instance != null)
         {
             OpenAIPanel.Instance.OnFreshKeyWordsDisplay -= UpdateDisplay;
+        }
+        if(commandInput != null)
+        {
+            commandInput.OnFreshKeyWordsDisplay -= UpdateDisplay;
         }
     }
 }

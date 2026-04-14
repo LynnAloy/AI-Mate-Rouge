@@ -24,3 +24,20 @@ public class TargetNode : Node
         Name = name;
     }
 }
+
+public class AssignmentNode : Node
+{
+    public string Lhs { get; }
+    public string Op1 { get; }   // 变量名或字面量
+    public string Operator { get; } // "+", "-", "*", "/" 或 null
+    public string Op2 { get; }   // 变量名或字面量 或 null
+
+    public AssignmentNode(string lhs, string op1, string op, string op2)
+    {
+        Lhs = lhs;
+        Op1 = op1;
+        Operator = op;
+        Op2 = op2;
+    }
+}
+
