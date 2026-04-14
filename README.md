@@ -1,3 +1,4 @@
-### Log 2026-4-6 ###  
-## Bugs unfixed ##  
-Can't correctly update the weapon's damage although the level is increased.
+### Log 2026-4-14 ###  
+## 实现功能 ##  
+1.实现AIMate的跟随player/enemy功能  
+
