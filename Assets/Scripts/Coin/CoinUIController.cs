@@ -7,19 +7,27 @@ public class CoinUIController : Singleton<CoinUIController>
 {
     [SerializeField] private TMP_Text coinText;
 
-    private int currentCoinAmount;
+    private int currentCoinAmount = 0;
 
     protected override void Awake()
     {
-        currentCoinAmount = CoinController.Instance.GetCurrentCoinAmount();
-        CoinController.Instance.OnCoinOwnedChange += UpdateCoinUI;
+        base.Awake();
+        if (CoinController.Instance != null)
+        {
+            currentCoinAmount = CoinController.Instance.GetCurrentCoinAmount();
+            CoinController.Instance.OnCoinOwnedChange += UpdateCoinUI;
+        }
         coinText.text = "金钱: " + currentCoinAmount;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (CoinController.Instance != null)
+        {
+            currentCoinAmount = CoinController.Instance.GetCurrentCoinAmount();
+            CoinController.Instance.OnCoinOwnedChange += UpdateCoinUI;
+        }
     }
 
     // Update is called once per frame

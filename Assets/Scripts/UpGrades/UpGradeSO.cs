@@ -16,6 +16,7 @@ public class UpGradeSO : ScriptableObject
     [SerializeField] private float playerPickUpRangeUpRatio;
     [SerializeField] private bool getNewWeapon;
     [SerializeField] private bool canUnlockKeyWordManul;
+    [SerializeField] private int cost;
 
     public string UpGradeName => upGradeName;
     public string UpGradeDescription => upGradeDescription;
@@ -28,5 +29,6 @@ public class UpGradeSO : ScriptableObject
     public float PlayerPickUpRangeUpRatio => playerPickUpRangeUpRatio;
     public bool GetNewWeapon => getNewWeapon;
     public bool CanUnlockKeyWordManul => canUnlockKeyWordManul;
+    public int Cost => cost;
 
 }

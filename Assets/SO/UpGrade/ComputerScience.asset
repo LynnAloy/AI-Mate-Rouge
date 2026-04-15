@@ -23,3 +23,4 @@ MonoBehaviour:
   playerPickUpRangeUpRatio: 1
   getNewWeapon: 0
   canUnlockKeyWordManul: 1
+  cost: 20

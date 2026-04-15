@@ -224,8 +224,8 @@ public class EnemyDamager : MonoBehaviour, IDamager
         isAreaDamage = damagerSO.IsAreaDamage;
         areaDamageInterval = damagerSO.AreaDamageInterval;
         destroyOnImpact = damagerSO.DestroyOnImpact;
-        baseDamageAmount = damageAmount;
-        baseDamagerSize = damagerSize;
+        baseDamageAmount = baseDamagerSO.DamageAmount;
+        baseDamagerSize = baseDamagerSO.DamagerSize;
     }
 
     private void LevelUpToDamage(int currentLevel)

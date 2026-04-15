@@ -10,6 +10,7 @@ public class UpGradeButtonUIController : MonoBehaviour
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text title;
     [SerializeField] private Button button;
+    [SerializeField] private TMP_Text cost;
 
 
     private List<UpGradeSO> upGrades = new();
@@ -39,11 +40,16 @@ public class UpGradeButtonUIController : MonoBehaviour
         title.text = upGradeSO.UpGradeName;
         description.text = upGradeSO.UpGradeDescription;
         icon.sprite = upGradeSO.UpGradeIcon;
+        cost.text = upGradeSO.Cost.ToString();
         if (button != null)
         {
             button.onClick.RemoveListener(OnButtonClicked);
             button.onClick.AddListener(OnButtonClicked);
             button.interactable = true;
+            if(CoinController.Instance.GetCurrentCoinAmount() < upGradeSO.Cost)
+            {
+                button.interactable = false;
+            }
         }
 
     }
@@ -51,6 +57,7 @@ public class UpGradeButtonUIController : MonoBehaviour
     private void OnButtonClicked()
     {
         UpGradeController.Instance.ApplyUpGrade(currentUpGrade);
+        CoinController.Instance.SpendCoin(currentUpGrade.Cost);
         button.interactable = false;
     }
 

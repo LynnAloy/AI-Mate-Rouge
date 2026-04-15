@@ -28,6 +28,15 @@ public class CoinController : Singleton<CoinController>
         OnCoinOwnedChange?.Invoke();
     }
 
+    public void SpendCoin(int coinValue)
+    {
+        if(currentCoinAmount >= coinValue)
+        {
+            currentCoinAmount -= coinValue;
+            OnCoinOwnedChange?.Invoke();
+        }
+    }
+
     public void SpawnCoin(Vector3 position, int amount)
     {
         for(int i = 0; i < amount; i++)

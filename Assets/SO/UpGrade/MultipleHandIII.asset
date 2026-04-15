@@ -22,3 +22,5 @@ MonoBehaviour:
   playerMoveSpeedUpRatio: 1
   playerPickUpRangeUpRatio: 1
   getNewWeapon: 1
+  canUnlockKeyWordManul: 0
+  cost: 30
