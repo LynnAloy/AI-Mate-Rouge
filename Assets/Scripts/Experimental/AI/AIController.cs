@@ -16,6 +16,9 @@ public class AIController : Singleton<AIController>
     [SerializeField] private List<Weapon> unassignedWeapon;
     [SerializeField] private List<Weapon> assignedWeapon;
     [SerializeField] private TMP_Text warningText;
+    [SerializeField] private float a;//for log base
+    //Reference
+    [SerializeField] private CircleCollider2D healRangeCollider;
     private bool canHeal = false;
     private float healCounter;//count down for healInterval
     private List<Weapon> runtimeUnassignedWeapon = new();
@@ -178,6 +181,12 @@ public class AIController : Singleton<AIController>
     public void SetCurrentLevel(int currentLevel)
     {
         this.currentLevel = currentLevel;
+        SetHealRange(currentLevel);
+    }
+
+    private void SetHealRange(int level)
+    {
+        healRangeCollider.radius = Mathf.Log(level, a) + 1.3f;
     }
 
     public void SetHeal(bool canHeal)

@@ -39766,6 +39766,8 @@ MonoBehaviour:
   - {fileID: 46135493}
   assignedWeapon: []
   warningText: {fileID: 1541270737}
+  a: 20
+  healRangeCollider: {fileID: 1922159749}
 --- !u!58 &1922159749
 CircleCollider2D:
   m_ObjectHideFlags: 0
