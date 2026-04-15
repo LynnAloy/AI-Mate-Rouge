@@ -26,5 +26,15 @@ public class LoadScene : MonoBehaviour
         }
         SceneManager.LoadScene(sceneName);
     }
+
+    public void LoadSceneAndChangeTS()
+    {
+        if (sceneName == null)
+        {
+            Debug.LogError("LoadScene: SceneName is null");
+        }
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(sceneName);
+    }
        
 }

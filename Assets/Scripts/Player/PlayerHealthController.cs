@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
     [SerializeField] private float maxHealth;
     [SerializeField] private Slider healthbar;
     private float currentHealth;
+
+    public Action OnPlayerDie;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,7 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
         if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
+            OnPlayerDie?.Invoke();
         }
     }
 

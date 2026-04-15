@@ -180,7 +180,15 @@ public class AIController : Singleton<AIController>
 
     public void SetCurrentLevel(int currentLevel)
     {
-        this.currentLevel = currentLevel;
+        if (currentLevel <= ExperienceLevelController.Instance.GetCurrentLevel())
+        {
+            this.currentLevel = currentLevel;
+        }
+        else
+        {
+            ShowWarning(warningText, "不允许下克上！想赋予的等级太高");
+            return;
+        }
         SetHealRange(currentLevel);
     }
 

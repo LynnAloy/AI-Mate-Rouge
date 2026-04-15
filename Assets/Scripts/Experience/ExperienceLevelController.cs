@@ -64,4 +64,9 @@ public class ExperienceLevelController : Singleton<ExperienceLevelController>
     {
         currentLevel += upAmount;
     }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
 }
