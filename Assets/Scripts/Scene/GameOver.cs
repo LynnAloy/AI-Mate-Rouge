@@ -25,6 +25,7 @@ public class GameOver : MonoBehaviour
     void Start()
     {
         PlayerHealthController.Instance.OnPlayerDie += OnGameOverLose;
+        WaveController.Instance.OnGameWin += OnGmaeOverWin;
     }
 
     // Update is called once per frame
@@ -41,6 +42,28 @@ public class GameOver : MonoBehaviour
         int talentCurrencyReward = WaveController.Instance.GetCurrentWave();
         TalentCurrencyController.Instance.AddTalentCurrency(talentCurrencyReward);
         rewardText.text = "获得天赋点:  " + talentCurrencyReward; 
+    }
+
+    private void OnGmaeOverWin()
+    {
+        Time.timeScale = 0;
+        endGamePanel_Win.SetActive(true);
+        parentPanel.SetActive(true);
+        int talentCurrencyReward = WaveController.Instance.GetCurrentWave();
+        TalentCurrencyController.Instance.AddTalentCurrency(talentCurrencyReward);
+        rewardText.text = "获得天赋点:  " + talentCurrencyReward;
+    }
+
+    private void OnDestroy()
+    {
+        if(PlayerHealthController.Instance != null)
+        {
+            PlayerHealthController.Instance.OnPlayerDie -= OnGameOverLose;
+        }
+        if(WaveController.Instance != null)
+        {
+            WaveController.Instance.OnGameWin -= OnGmaeOverWin;
+        }
     }
 
 }

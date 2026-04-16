@@ -19,23 +19,27 @@ public class DifficultyController : Singleton<DifficultyController>
     private int waveInterval_b;//4
     private float waveInterval_c;//0.25
     private int waveInterval_d;//20
+    private int maxWave;
+    private int bossWave;
 
 
     protected override void Awake()
     {
         base.Awake();
-        waveLength_a = difficultySO.Difficulties[0].WaveLength_a;
-        waveLength_b = difficultySO.Difficulties[0].WaveLength_b;
-        waveLength_c = difficultySO.Difficulties[0].WaveLength_c;
-        waveLength_d = difficultySO.Difficulties[0].WaveLength_d;
-        spawnLimitLevel_a = difficultySO.Difficulties[0].SpawnLimitLevel_a;
-        spawnLimitLevel_b = difficultySO.Difficulties[0].SpawnLimitLevel_b;
-        spawnLimit_a = difficultySO.Difficulties[0].SpawnLimit_a;
-        spawnLimit_b = difficultySO.Difficulties[0].SpawnLimit_b;
-        waveInterval_a = difficultySO.Difficulties[0].WaveInterval_a;
-        waveInterval_b = difficultySO.Difficulties[0].WaveInterval_b;
-        waveInterval_c = difficultySO.Difficulties[0].WaveInterval_c;
-        waveInterval_d = difficultySO.Difficulties[0].WaveInterval_d;
+        waveLength_a = difficultySO.WaveLength_a;
+        waveLength_b = difficultySO.WaveLength_b;
+        waveLength_c = difficultySO.WaveLength_c;
+        waveLength_d = difficultySO.WaveLength_d;
+        spawnLimitLevel_a = difficultySO.SpawnLimitLevel_a;
+        spawnLimitLevel_b = difficultySO.SpawnLimitLevel_b;
+        spawnLimit_a = difficultySO.SpawnLimit_a;
+        spawnLimit_b = difficultySO.SpawnLimit_b;
+        waveInterval_a = difficultySO.WaveInterval_a;
+        waveInterval_b = difficultySO.WaveInterval_b;
+        waveInterval_c = difficultySO.WaveInterval_c;
+        waveInterval_d = difficultySO.WaveInterval_d;
+        maxWave = difficultySO.MaxWave;
+        bossWave = difficultySO.BossWave;
     }
 
     // Start is called before the first frame update
@@ -92,4 +96,23 @@ public class DifficultyController : Singleton<DifficultyController>
         return waveInterval_a + (waveInterval_b - waveInterval_a) / (1 + Mathf.Exp(waveInterval_c * (wave - waveInterval_d)));
     }
 
+    public int GetMaxWave()
+    {
+        return maxWave;
+    }
+
+    public void SetMaxWaveExternal(int value)
+    {
+        difficultySO.MaxWave = value;
+    }
+
+    public int GetBossWave()
+    {
+        return bossWave;
+    }
+
+    public void SetBossWaveExternal(int value)
+    {
+        difficultySO.BossWave = value;
+    }
 }

@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da051ef7b692144a8c9d510250f02a8, type: 3}
   m_Name: TestDifficulty
   m_EditorClassIdentifier: 
-  difficulties:
-  - WaveLength_a: 20
-    WaveLength_b: 20
-    WaveLength_c: -0.25
-    WaveLength_d: 20
-    SpawnLimitLevel_a: 1
-    SpawnLimitLevel_b: 5
-    SpawnLimit_a: 2
-    SpawnLimit_b: 3
-    WaveInterval_a: 1
-    WaveInterval_b: 4
-    WaveInterval_c: 0.25
-    WaveInterval_d: 20
+  waveLength_a: 20
+  waveLength_b: 20
+  waveLength_c: -0.25
+  waveLength_d: 20
+  spawnLimitLevel_a: 1
+  spawnLimitLevel_b: 5
+  spawnLimit_a: 2
+  spawnLimit_b: 3
+  waveInterval_a: 1
+  waveInterval_b: 4
+  waveInterval_c: 0.25
+  waveInterval_d: 20
+  maxWave: 15
+  bossWave: 5

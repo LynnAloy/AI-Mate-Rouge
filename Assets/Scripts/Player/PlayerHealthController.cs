@@ -6,16 +6,25 @@ using UnityEngine.UI;
 
 public class PlayerHealthController : Singleton<PlayerHealthController>
 {
-    [SerializeField] private float maxHealth;
+    [SerializeField] private PlayerHealthControllerSO playerHealthControllerSO;
     [SerializeField] private Slider healthbar;
+
+    private float maxHealth;
     private float currentHealth;
 
     public Action OnPlayerDie;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        maxHealth = playerHealthControllerSO.MaxHealth;
+        currentHealth = maxHealth;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        
     }
 
     // Update is called once per frame
@@ -52,6 +61,14 @@ public class PlayerHealthController : Singleton<PlayerHealthController>
     {
         maxHealth *= ratio;
         currentHealth = maxHealth;
+    }
+
+    public void SetMaxHealthExternal(float ratio)
+    {
+        Debug.Log($"ratio: {ratio}  maxHealth: {maxHealth}");
+        maxHealth *= ratio;
+        playerHealthControllerSO.MaxHealth = maxHealth;
+        Debug.Log("PlayerHealthController: Invoked.");
     }
 
     public float GetCurrentHealth()

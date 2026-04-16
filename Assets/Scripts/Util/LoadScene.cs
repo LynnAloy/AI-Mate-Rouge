@@ -24,6 +24,7 @@ public class LoadScene : MonoBehaviour
         {
             Debug.LogError("LoadScene: SceneName is null");
         }
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(sceneName);
     }
 

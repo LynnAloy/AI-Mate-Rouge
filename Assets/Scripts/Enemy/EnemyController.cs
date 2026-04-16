@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour
         animator.runtimeAnimatorController.animationClips[0] = enemySO.Idle;
         proabilityToDropKeyWord = enemySO.ProbabilityToDropKeyWord;
         isBoss = enemySO.IsBoss;
+        Debug.Log($"EnemyController:Is Boss{isBoss}");
         coinToDrop = enemySO.CoinToDrop;
         //Debug.Log(currentHealth);
     }
@@ -162,6 +163,11 @@ public class EnemyController : MonoBehaviour
     public int GetEnemyLevel()
     {
         return enemyLevel;
+    }
+
+    public bool GetIsEnemyBoss()
+    {
+        return enemySO.IsBoss;
     }
 
 }

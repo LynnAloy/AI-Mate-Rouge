@@ -10,8 +10,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform rightUpTrans;
     [SerializeField] private Transform playerTrans;
     [SerializeField] private GameObject spawnAlertImage; 
-    [SerializeField] private GameObject enemyToSpawn;
-    [SerializeField] private List<EnemyController> enemies;
+    [SerializeField] private List<GameObject> enemies;
     //Variable
     [SerializeField] private float alertTime;
     //Variable from DifficultySO
@@ -19,13 +18,17 @@ public class EnemySpawner : MonoBehaviour
     private int spawnLimitLevel;
     private float waveLength;
     private float waveInterval;
+    private int bossWave;
+
+    private bool hasSpwanedEnemyBoss;
+    private int currentWave = 1;
 
     private float spawnCounter;//When a wave starts, how much time will spawn a bunch of enemies?
     private float waveCounter;//The whole length of a wave
     private Coroutine alertImageCoroutine;
     private Vector3 spawnPos;
     private bool hasAlertImageDisplayed;
-    private List<EnemyController> tempEnemies;
+    private List<GameObject> tempEnemies;
 
     // Start is called before the first frame update
     void Start()
@@ -46,41 +49,54 @@ public class EnemySpawner : MonoBehaviour
     {
         if (PlayerHealthController.Instance.gameObject.activeSelf)
         {
-            if (waveCounter > 0)
+            if (!hasSpwanedEnemyBoss)
             {
-                waveCounter -= Time.deltaTime;
-                spawnCounter -= Time.deltaTime;
-                if (spawnCounter <= alertTime && !hasAlertImageDisplayed)
+                if (waveCounter > 0)
                 {
-                    StartAlertImage(spawnPos);
-                    hasAlertImageDisplayed = true;
+                    waveCounter -= Time.deltaTime;
+                    spawnCounter -= Time.deltaTime;
+                    if (spawnCounter <= alertTime && !hasAlertImageDisplayed)
+                    {
+                        StartAlertImage(spawnPos);
+                        hasAlertImageDisplayed = true;
+                    }
+                    if (spawnCounter <= 0)
+                    {
+                        spawnCounter = waveInterval;
+                        if (currentWave % bossWave != 0)
+                        {
+                            SpawnEnemy(spawnLimit, spawnLimitLevel);
+                        }
+                        else if(currentWave % bossWave == 0 && currentWave > 0)
+                        {
+                            SpawnEnemyBoss(spawnLimitLevel);
+                        }
+                        //Create a random enemy respawn position
+                        spawnPos = GetRandomRespawnPos();
+                        hasAlertImageDisplayed = false;
+                    }
                 }
-                if (spawnCounter <= 0)
+                else
                 {
-                    spawnCounter = waveInterval;
-                    SpawnEnemy(spawnLimit, spawnLimitLevel);
-                    //Create a random enemy respawn position
-                    spawnPos = GetRandomRespawnPos();
-                    hasAlertImageDisplayed = false;
+                    waveCounter = waveLength;
                 }
-            }
-            else
-            {
-                waveCounter = waveLength;
             }
         }
     }
 
     private void InitSpawnerInfo()
     {
-        int currentWave = WaveController.Instance.GetCurrentWave();
         spawnLimit = DifficultyController.Instance.GetSpawnLimit(currentWave);
         spawnLimitLevel = DifficultyController.Instance.GetSpawnLimitLevel(currentWave);
         waveLength = DifficultyController.Instance.GetWaveLength(currentWave);
         waveInterval = DifficultyController.Instance.GetWaveInterval(currentWave);
+        bossWave = DifficultyController.Instance.GetBossWave();
         spawnCounter = waveInterval;
-        waveCounter = waveLength;   
+        waveCounter = waveLength;
+        hasSpwanedEnemyBoss = false;
         spawnPos = GetRandomRespawnPos();
+        Debug.Log($"CurrentWave:{currentWave} BossWave:{bossWave} IsBossWave: {currentWave % bossWave == 0}");
+        Debug.Log($"HasSpawnBoss: {hasSpwanedEnemyBoss}");
     }
 
     public void ResetSpawnerInfo()
@@ -88,8 +104,10 @@ public class EnemySpawner : MonoBehaviour
         tempEnemies.Clear();
         hasAlertImageDisplayed = false;
         spawnPos = GetRandomRespawnPos();
+        currentWave++;
         InitSpawnerInfo();
     }
+
 
     private void SpawnEnemy(int amountlimit, int levellimit)
     {
@@ -97,7 +115,7 @@ public class EnemySpawner : MonoBehaviour
         {
             for(int i = 0; i < enemies.Count; i++)
             {
-                if(enemies[i].GetEnemyLevel() <= levellimit)
+                if(enemies[i].GetComponent<EnemyController>().GetEnemyLevel() <= levellimit && !enemies[i].GetComponent<EnemyController>().GetIsEnemyBoss())
                 {
                     tempEnemies.Add(enemies[i]);
                 }
@@ -109,8 +127,32 @@ public class EnemySpawner : MonoBehaviour
             for(int i = 0; i < randomAmount; i++)
             {
                 int randomEnemyIndex = Random.Range(0, tempEnemies.Count);
+                Debug.Log($"Is this enemy boss: {tempEnemies[randomEnemyIndex].GetComponent<EnemyController>().GetIsEnemyBoss()}");
                 Instantiate(tempEnemies[randomEnemyIndex], spawnPos, Quaternion.identity);
             }
+        }
+    }
+
+    private void SpawnEnemyBoss(int levelLimit)
+    {
+        if(tempEnemies.Count == 0)
+        {
+            for(int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i].GetComponent<EnemyController>().GetEnemyLevel() <= levelLimit && enemies[i].GetComponent<EnemyController>().GetIsEnemyBoss())
+                {
+                    tempEnemies.Add(enemies[i]);
+                }
+            }
+            Debug.Log($"LevelLimit: {levelLimit}");
+            Debug.Log($"SpawnEnemyBoss: Boss number is {tempEnemies.Count}");
+        }
+        if(tempEnemies.Count > 0)
+        {
+            int randomEnemyIndex = Random.Range(0, tempEnemies.Count);
+            Instantiate(tempEnemies[randomEnemyIndex], spawnPos, Quaternion.identity);
+            Debug.Log($"Is this enemy boss: {tempEnemies[randomEnemyIndex].GetComponent<EnemyController>().GetIsEnemyBoss()}");
+            hasSpwanedEnemyBoss = true;
         }
     }
 

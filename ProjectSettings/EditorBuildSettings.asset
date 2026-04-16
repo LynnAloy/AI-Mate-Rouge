@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/VideoPlayerScene.unity
     guid: 34f0b634aa99221489049cb47f1193c9
   - enabled: 1
+    path: Assets/Scenes/TalentScene.unity
+    guid: 0d17814aebeb3c340a4c939369edf824
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: bf900f3c413dae54084bcc519f86f3db
   m_configObjects: {}

@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
-    [SerializeField] private float playerMoveSpeed;
+    [SerializeField] private PlayerSO playerSO;
     [SerializeField] private float pickupRange;
     [SerializeField] private List<Weapon> unassignedWeapons;
     [SerializeField] private List<Weapon> assignedWeapons;
@@ -16,9 +17,16 @@ public class PlayerController : Singleton<PlayerController>
     private Rigidbody2D rb;
     private List<Weapon> runtimeUnassignedWeapons;
 
+    private float playerMoveSpeed;
+    private bool isSEE;
+
+    public Action OnSEEChanged;
+
     protected override void Awake()
     {
         base.Awake();
+        playerMoveSpeed = playerSO.PlayerMoveSpeed;
+        isSEE = playerSO.IsSEE;
         runtimeUnassignedWeapons = new List<Weapon>(unassignedWeapons);
     }
 
@@ -122,6 +130,26 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerMoveSpeed *= ratio;
         playerMoveSpeed = Mathf.Clamp(playerMoveSpeed, 0.1f, 20f);
+    }
+
+    public void SetPlayerMoveSpeedExternal(float ratio)
+    {
+        playerMoveSpeed *= ratio;
+        playerMoveSpeed = Mathf.Clamp(playerMoveSpeed, 0.1f, 20f);
+        playerSO.PlayerMoveSpeed = playerMoveSpeed;
+        Debug.Log("PlayerController: MoveSpeed alter invoked.");
+    }
+
+    public bool GetIsSEE()
+    {
+        return isSEE;
+    }
+
+    public void SetIsSEEExternal(bool isSEE)
+    {
+        playerSO.IsSEE = isSEE;
+        OnSEEChanged?.Invoke();
+        Debug.Log("PlayerController: IsSEE alter invoked.");
     }
 
     public List<Weapon> GetAssignedWeapons()

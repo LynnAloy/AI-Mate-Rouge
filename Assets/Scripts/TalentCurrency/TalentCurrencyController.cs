@@ -31,4 +31,15 @@ public class TalentCurrencyController : Singleton<TalentCurrencyController>
         talentCurrencyOwned += amount;
         talentCurrencySO.TalentCurrencyOwned = talentCurrencyOwned;
     }
+
+    public void SpendTalentCurrency(int amount)
+    {
+        talentCurrencyOwned -= amount;
+        talentCurrencySO.TalentCurrencyOwned = talentCurrencyOwned;
+    }
+
+    public int GetTalentCurrencyOwned()
+    {
+        return talentCurrencySO.TalentCurrencyOwned;
+    }
 }

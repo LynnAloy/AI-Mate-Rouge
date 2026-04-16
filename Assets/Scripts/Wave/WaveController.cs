@@ -10,13 +10,19 @@ public class WaveController : Singleton<WaveController>
     [SerializeField] private EnemySpawner enemySpawner;
 
     private float waveLength;
+    private int maxWave;
     private float waveCounter;
     private int currentWave = 1;
     private bool isPaused = false;
+    private bool hasWin = false;
+
+    public Action OnGameWin; 
+
     // Start is called before the first frame update
     void Start()
     {
         waveLength = DifficultyController.Instance.GetWaveLength(currentWave);
+        maxWave = DifficultyController.Instance.GetMaxWave();
         waveCounter = waveLength;
     }
 
@@ -28,6 +34,14 @@ public class WaveController : Singleton<WaveController>
         if(waveCounter <= 0)
         {
             EndWave();
+        }
+        if(currentWave == maxWave)
+        {
+            if (!hasWin)
+            {
+                OnGameWin?.Invoke();
+                hasWin = true;
+            }
         }
     }
 

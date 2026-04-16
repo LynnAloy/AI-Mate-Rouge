@@ -13,7 +13,19 @@ public class OpenReferencePanel : Singleton<OpenReferencePanel>
     // Start is called before the first frame update
     void Start()
     {
-        referenceButton.interactable = false;
+        if (PlayerController.Instance.GetIsSEE())
+        {
+            Debug.Log($"OpenReferencePanel: IsSEE: {PlayerController.Instance.GetIsSEE()}");
+            referenceButton.interactable = true;
+        }
+        else
+        {
+            referenceButton.interactable = false;
+        }
+        if(PlayerController.Instance != null)
+        {
+            PlayerController.Instance.OnSEEChanged += SetCanInteractWithButton;
+        }
     }
 
     // Update is called once per frame
@@ -38,5 +50,18 @@ public class OpenReferencePanel : Singleton<OpenReferencePanel>
     public void CanInteractWithButton(bool canInteract)
     {
         referenceButton.interactable = canInteract;
+    }
+
+    private void SetCanInteractWithButton()
+    {
+        referenceButton.interactable = true;
+    }
+
+    private void OnDestroy()
+    {
+        if(PlayerController.Instance != null)
+        {
+            PlayerController.Instance.OnSEEChanged -= SetCanInteractWithButton;
+        }
     }
 }

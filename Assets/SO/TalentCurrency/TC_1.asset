@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf8de97f95576048a823b8be0963f9c, type: 3}
   m_Name: TC_1
   m_EditorClassIdentifier: 
-  talentCurrencyOwned: 0
+  talentCurrencyOwned: 10
