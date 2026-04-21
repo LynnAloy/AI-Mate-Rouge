@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upGradeName: "\u827E\u5409\u5965"
   upGradeDescription: "\u771F\u6B63\u7684\u523A\u5BA2\u5148\u8F88\uFF01"
-  upGradeIcon: {fileID: 0}
+  upGradeIcon: {fileID: 21300000, guid: 675815717079c5c408b2b9eb7e4237e3, type: 3}
   weaponLevelUpAmount: 0
   playerLevelUpAmount: 0
   playerHealthUpRatio: 1.2

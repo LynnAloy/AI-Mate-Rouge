@@ -2077,6 +2077,84 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
+--- !u!1 &1176181191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176181193}
+  - component: {fileID: 1176181192}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1176181192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176181191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bf29cf15d56f14bbd6e4a332769acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioTypes:
+  - Source: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 9113a8a90b5a5ca42a7d9af05d6cf620, type: 3}
+    MixerGroup: {fileID: -9172634334289470470, guid: f2f577c00f54e1141a64dd42e908acf9, type: 2}
+    ClipName: BattleMusic_1
+    Volume: 0.8
+    Pitch: 0.95
+    Loop: 0
+    PlayOnAwake: 0
+  - Source: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 816b6eab58d24c646a55f35fb63b0f1f, type: 3}
+    MixerGroup: {fileID: -9172634334289470470, guid: f2f577c00f54e1141a64dd42e908acf9, type: 2}
+    ClipName: BattleMusic_2
+    Volume: 0.8
+    Pitch: 0.95
+    Loop: 0
+    PlayOnAwake: 0
+  - Source: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 5adfed4ce541c034888cee4f8a8945fb, type: 3}
+    MixerGroup: {fileID: -9172634334289470470, guid: f2f577c00f54e1141a64dd42e908acf9, type: 2}
+    ClipName: BattleMusic_3
+    Volume: 0.8
+    Pitch: 0.95
+    Loop: 0
+    PlayOnAwake: 0
+  - Source: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 675ab8bfa37ec4493b37742561c9090a, type: 3}
+    MixerGroup: {fileID: -9172634334289470470, guid: f2f577c00f54e1141a64dd42e908acf9, type: 2}
+    ClipName: BattleMusic_4
+    Volume: 0.8
+    Pitch: 0.95
+    Loop: 0
+    PlayOnAwake: 0
+  mixer: {fileID: 24100000, guid: f2f577c00f54e1141a64dd42e908acf9, type: 2}
+--- !u!4 &1176181193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176181191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1201372763
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,4 +4010,5 @@ SceneRoots:
   - {fileID: 489630271}
   - {fileID: 388158735}
   - {fileID: 1452071101}
+  - {fileID: 1176181193}
   - {fileID: 1997470742}

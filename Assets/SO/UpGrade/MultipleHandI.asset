@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upGradeName: "\u4E49\u80A2"
   upGradeDescription: "\u9664\u4E86\u4E49\u80A2\u4E4B\u5916\u627E\u4E0D\u5230\u89E3\u91CA\u600E\u4E48\u518D\u62FF\u4E00\u628A\u6B66\u5668"
-  upGradeIcon: {fileID: 0}
+  upGradeIcon: {fileID: 21300000, guid: f6021440870a1bb41b1acab34e46f7af, type: 3}
   weaponLevelUpAmount: 0
   playerLevelUpAmount: 0
   playerHealthUpRatio: 1
@@ -23,4 +23,4 @@ MonoBehaviour:
   playerPickUpRangeUpRatio: 1
   getNewWeapon: 1
   canUnlockKeyWordManul: 0
-  cost: 30
+  cost: 25
